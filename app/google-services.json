@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "7698766220",
+    "firebase_url": "https://epic-predictions.firebaseio.com",
+    "project_id": "epic-predictions",
+    "storage_bucket": "epic-predictions.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:7698766220:android:f7e195306d884d69",
+        "android_client_info": {
+          "package_name": "com.epic.predictions"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "7698766220-d4cf3mim6shho87oup8rhumetulgvmhr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.epic.predictions",
+            "certificate_hash": "3fcf1cb6a06d43e991556a1d6c3bbd21c7519229"
+          }
+        },
+        {
+          "client_id": "7698766220-6b183gj5v0o1ss2mqgokqfalct885ef4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAL9uyCY0lpnEYVKZQd3DyBSVnHHH5zdh8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "7698766220-6b183gj5v0o1ss2mqgokqfalct885ef4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">Epic Predictions</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+    <string name="facebook_app_id">443082772880211</string>
+    <string name="fb_login_protocol_scheme">fb443082772880211</string>
+
+    <!--Previous Games-->
+    <string name="previous">Previous</string>
+    <string name="previous_matches">Previous Matches</string>
+
+    <!--Today's Games-->
+    <string name="todays">Today\'s</string>
+    <string name="todays_matches">Today\'s Matches</string>
+
+    <string name="btn_previous">&lt;&lt; Prev</string>
+    <string name="btn_next">Next &gt;&gt;</string>
+
+    <!--Admob-->
+    <string name="admob_interstitial">ca-app-pub-1591993844409076/2376843291</string>
+    <string name="admob_banner">ca-app-pub-1591993844409076/4588460707</string>
+
+
+    <!--FB-->
+    <string name="fb_15_sec_interstitial">443082772880211_443894052799083</string>
+    <string name="fb_about_banner">443082772880211_443893422799146</string>
+    <string name="fb_about_native">443082772880211_443893152799173</string>
+    <string name="fb_every_60_sec_interstitial">443082772880211_443894179465737</string>
+    <string name="fb_previous_interstitial">443082772880211_443893656132456</string>
+    <string name="fb_previous_native">443082772880211_443892966132525</string>
+    <string name="fb_todays_interstitial">443082772880211_443893846132437</string>
+    <string name="fb_todays_native">443082772880211_443892769465878</string>
+    <string name="fb_previous_banner">443082772880211_444521142736374</string>
+    <string name="fb_todays_banner">443082772880211_444521086069713</string>
+</resources>

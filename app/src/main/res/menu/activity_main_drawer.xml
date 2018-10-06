@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single" >
+        <item
+            android:id="@+id/previous_matches"
+            android:title="@string/previous_matches"
+            android:icon="@drawable/ic_restore_black_24dp"/>
+        <!--<item-->
+            <!--android:id="@+id/previous_1.5"-->
+            <!--android:title="@string/previous_1.5" />-->
+        <!--<item-->
+            <!--android:id="@+id/previous_2.5"-->
+            <!--android:title="@string/previous_2.5"/>-->
+        <!--<item-->
+            <!--android:id="@+id/previous_3.5"-->
+            <!--android:title="@string/previous_3.5"/>-->
+        <!--<item-->
+            <!--android:id="@+id/previous_vip"-->
+            <!--android:title="@string/previous_vip"/>-->
+        <!--<item-->
+            <!--android:id="@+id/previous_sure"-->
+            <!--android:title="@string/previous_sure"/>-->
+
+        <item
+            android:id="@+id/todays_matches"
+            android:title="@string/todays_matches"
+            android:icon="@drawable/ic_today_black_24dp"/>
+        <!--<item-->
+            <!--android:id="@+id/todays_1.5"-->
+            <!--android:title="@string/todays_1.5"/>-->
+        <!--<item-->
+            <!--android:id="@+id/todays_2.5"-->
+            <!--android:title="@string/todays_2.5"/>-->
+        <!--<item-->
+            <!--android:id="@+id/todays_3.5"-->
+            <!--android:title="@string/todays_3.5"/>-->
+        <!--<item-->
+            <!--android:id="@+id/todays_vip"-->
+            <!--android:title="@string/todays_vip"/>-->
+
+        <!--<item-->
+            <!--android:id="@+id/sure_tips"-->
+            <!--android:title="@string/sure_tips"/>-->
+
+        <!--<item-->
+            <!--android:id="@+id/tomorrows_matches"-->
+            <!--android:title="@string/tomorrows_matches"/>-->
+        <!--<item-->
+            <!--android:id="@+id/tomorrows_1.5"-->
+            <!--android:title="@string/tomorrows_1.5"/>-->
+        <!--<item-->
+            <!--android:id="@+id/tomorrows_2.5"-->
+            <!--android:title="@string/tomorrows_2.5"/>-->
+        <!--<item-->
+            <!--android:id="@+id/tomorrows_3.5"-->
+            <!--android:title="@string/tomorrows_3.5"/>-->
+        <!--<item-->
+            <!--android:id="@+id/tomorrows_vip"-->
+            <!--android:title="@string/tomorrows_vip"/>-->
+
+    </group>
+
+    <item android:title="More">
+        <menu>
+            <item
+                android:id="@+id/nav_rateus"
+                android:icon="@drawable/ic_star_rate_black_18dp"
+                android:title="Rate us 5 Star" />
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Share" />
+            <item
+                android:id="@+id/nav_about"
+                android:icon="@drawable/ic_about"
+                android:title="About" />
+        </menu>
+    </item>
+
+    <item android:checkable="false"
+        android:enabled="false"
+        android:title="v1.1" />
+
+</menu>
