@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 
 import com.crashlytics.android.Crashlytics;
 
@@ -43,7 +44,13 @@ public class welcomeScreen extends AppCompatActivity {
                 // This method will be executed once the timer is over
                 // Start your app main activity
 
-                if(!isConnected(welcomeScreen.this)) buildDialog(welcomeScreen.this).show();
+                if(!isConnected(welcomeScreen.this)){
+                    try{
+                        buildDialog(welcomeScreen.this).show();
+                    }catch(Exception e){
+                        Log.d("awesome","Exception while opening dialog: "+e.toString());
+                    }
+                }
                 else {
                     //logger=AppEventsLogger.newLogger(welcomeScreen.this);
                     Intent i = new Intent(welcomeScreen.this, MainActivity.class);

@@ -4,6 +4,7 @@ package com.epic.predictions;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
@@ -158,40 +159,55 @@ public class PreviousFragment extends Fragment {
         call.enqueue(new Callback<GameResponse>() {
             @Override
             public void onResponse(Call<GameResponse> call, Response<GameResponse> response) {
-                Log.d("awesome","Got response: "+response.body().getData().size());
-                progressBar.setVisibility(View.GONE);
-                if(response.body().getData().size()==0){
-                    recyclerView.setVisibility(View.GONE);
-                    txtError.setVisibility(View.VISIBLE);
-                }else{
-                    nativeAdIds.add(getResources().getString(R.string.fb_previous_native));
-                    nativeAdIds.add(getResources().getString(R.string.fb_previous_native));
-                    nativeAdIds.add(getResources().getString(R.string.fb_previous_native));
+                try{
+                    if(response.isSuccessful()){
+                        Log.d("awesome","Got response: "+response.body().getData().size());
+                        progressBar.setVisibility(View.GONE);
+                        if(response.body().getData().size()==0){
+                            recyclerView.setVisibility(View.GONE);
+                            txtError.setVisibility(View.VISIBLE);
+                        }else{
+                            nativeAdIds.add(getResources().getString(R.string.fb_previous_native));
+                            nativeAdIds.add(getResources().getString(R.string.fb_previous_native));
+                            nativeAdIds.add(getResources().getString(R.string.fb_previous_native));
 
-                    originalGamesList=response.body().getData();
-                    Log.d("pagenation","Total game size: "+originalGamesList.size());
-                    int totalSize=originalGamesList.size();
-                    for(int i=0;i<originalGamesList.size();i++){
-                        originalGamesList.get(i).setCount(totalSize-i);
-                    }
-                    totalPageCount=(int)(Math.ceil(originalGamesList.size()/4));
-                    Log.d("pagenation","Total page count: "+totalPageCount);
-                    currentPage=0;
-                    for(int i=0;i<4;i++){
-                        try{
-                            filteredGamesList.add(originalGamesList.get((4*currentPage)+i));
-                        }catch(Exception e){
-                            Log.d("pagenation","This is a silly exception");
+                            originalGamesList=response.body().getData();
+                            Log.d("pagenation","Total game size: "+originalGamesList.size());
+                            int totalSize=originalGamesList.size();
+                            for(int i=0;i<originalGamesList.size();i++){
+                                originalGamesList.get(i).setCount(totalSize-i);
+                            }
+                            totalPageCount=(int)(Math.ceil(originalGamesList.size()/4));
+                            Log.d("pagenation","Total page count: "+totalPageCount);
+                            currentPage=0;
+                            for(int i=0;i<4;i++){
+                                try{
+                                    filteredGamesList.add(originalGamesList.get((4*currentPage)+i));
+                                }catch(Exception e){
+                                    Log.d("pagenation","This is a silly exception");
+                                }
+                            }
+                            recyclerView.setAdapter(new GamesAdapter(getActivity(),filteredGamesList,nativeAdIds,getResources().getString(R.string.fb_previous_banner)));
+                            recyclerView.getAdapter().notifyDataSetChanged();
                         }
+                    }else {
+                        Snackbar.make(recyclerView,"Something went wrong. Please try again",Snackbar.LENGTH_LONG).show();
                     }
-                    recyclerView.setAdapter(new GamesAdapter(getActivity(),filteredGamesList,nativeAdIds,getResources().getString(R.string.fb_previous_banner)));
-                    recyclerView.getAdapter().notifyDataSetChanged();
+
+                }catch (Exception e){
+                    Log.d("awesome", "some error occured" +e.toString());
                 }
+
             }
 
             @Override
             public void onFailure(Call<GameResponse> call, Throwable t) {
                 Log.d("awesome","Got failure: "+t.getLocalizedMessage());
+                try{
+                    Snackbar.make(rootView,"Something went wrong. Please try again",Snackbar.LENGTH_LONG).show();
+
+                }catch (Exception ignored){}
+
             }
         });
 
