@@ -29,6 +29,9 @@ import com.facebook.ads.InterstitialAd;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 import io.presage.Presage;
 import io.presage.common.AdConfig;
@@ -61,6 +64,17 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar =  findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        FirebaseMessaging.getInstance().subscribeToTopic("all")
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        if(task.isSuccessful()){
+                            Log.d("awesome","Successfully subscribed to topic");
+                        }else{
+                            Log.d("awesome","Error in subscribing to topic");
+                        }
+                    }
+                });
         setTitle("Previous Matches");
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
