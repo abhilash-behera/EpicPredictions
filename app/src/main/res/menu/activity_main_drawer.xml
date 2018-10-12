@@ -80,6 +80,6 @@
 
     <item android:checkable="false"
         android:enabled="false"
-        android:title="v1.3" />
+        android:title="v1.4" />
 
 </menu>
